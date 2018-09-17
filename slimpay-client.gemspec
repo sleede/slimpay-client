@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name = 'slimpay-client'
   s.summary = "Slimpay client"
   s.description = s.summary
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.files = `git ls-files`.split("\n")
   s.require_paths = ['lib']
   s.authors = ['Jonathan VUKOVICH TRIBOUHARET']
