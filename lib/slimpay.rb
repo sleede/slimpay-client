@@ -32,6 +32,10 @@ module Slimpay
     def base
       return @base if @base
 
+      if !self.client_id || !self.client_secret
+        raise "[Slimpay] client_id or client_secret not defined"
+      end
+
       json = request(:get, '/')
       klass = generate_resource(json)
 
@@ -190,7 +194,7 @@ module Slimpay
       client = OAuth2::Client.new(
         @client_id,
         @client_secret,
-        site: URI.join(@base_url, 'oauth/token'),
+        site: @base_url,
         headers: {
           'grant_type' => 'client_credentials',
           'scope' => 'api_admin'
