@@ -10,7 +10,7 @@ module Slimpay
 
   class << self
 
-    attr_accessor :client_id, :client_secret, :creditor_reference, :logger
+    attr_accessor :client_id, :client_secret, :logger, :creditor_reference
 
     def initialize
       sandbox = true

@@ -2,8 +2,9 @@ $:.unshift File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'slimpay-client'
-  s.summary = "Slimpay client"
+  s.summary = "Ruby library for Slimpay"
   s.description = s.summary
+  s.homepage = "https://github.com/jonathantribouharet/slimpay-client"
   s.version = '1.0.2'
   s.files = `git ls-files`.split("\n")
   s.require_paths = ['lib']
