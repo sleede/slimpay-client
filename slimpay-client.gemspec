@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary = "Ruby library for Slimpay"
   s.description = s.summary
   s.homepage = "https://github.com/jonathantribouharet/slimpay-client"
-  s.version = '1.0.2'
+  s.version = '1.0.3'
   s.files = `git ls-files`.split("\n")
   s.require_paths = ['lib']
   s.authors = ['Jonathan VUKOVICH TRIBOUHARET']
