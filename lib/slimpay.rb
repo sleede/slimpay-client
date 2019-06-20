@@ -76,7 +76,7 @@ module Slimpay
 
           if path.end_with?('{id}')
             klass.send(:define_method, method_name) do |id|
-              new_path = path.sub('{id}', id)}
+              new_path = path.sub('{id}', id)
               Slimpay.send(:parse_response, Slimpay.send(:request, http_method, new_path))
             end
           else
