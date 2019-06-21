@@ -195,10 +195,7 @@ module Slimpay
         @client_id,
         @client_secret,
         site: @base_url,
-        headers: {
-          'grant_type' => 'client_credentials',
-          'scope' => 'api_admin'
-        }
+        auth_scheme: :basic_auth
       )
       response = client.client_credentials.get_token
       @token = response.token
