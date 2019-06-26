@@ -68,7 +68,7 @@ module Slimpay
           http_method = :get
 
           # HACK: don't have the information from the API
-          if method_name.start_with?('create', 'post', 'revoke', 'cancel')
+          if method_name.start_with?('create', 'post', 'revoke', 'cancel', 'ack')
             http_method = :post
           elsif method_name.start_with?('patch')
             http_method = :patch
