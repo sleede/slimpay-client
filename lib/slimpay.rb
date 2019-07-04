@@ -60,11 +60,15 @@ module Slimpay
 
       if json['_links'].present?
         json['_links'].each do |key, _|
-          # Ignore `self` and `profile`
-          next if !key.start_with?(Slimpay::LINK_NAMESPACE)
-
+          # Ignore `profile`
+          next if key == 'profile'
+          
           path = json['_links'][key]['href'].dup
-          method_name = key.sub(Slimpay::LINK_NAMESPACE, '').underscore
+					if key == 'self'
+						method_name = key
+					else
+						method_name = key.sub(Slimpay::LINK_NAMESPACE, '').underscore
+					end
           http_method = :get
 
           # HACK: don't have the information from the API
