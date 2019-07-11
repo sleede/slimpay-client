@@ -64,11 +64,12 @@ module Slimpay
           next if key == 'profile'
           
           path = json['_links'][key]['href'].dup
-					if key == 'self'
-						method_name = key
-					else
-						method_name = key.sub(Slimpay::LINK_NAMESPACE, '').underscore
-					end
+		
+	  if key == 'self'
+	    method_name = key
+	  else
+	    method_name = key.sub(Slimpay::LINK_NAMESPACE, '').underscore
+	  end
           http_method = :get
 
           # HACK: don't have the information from the API
